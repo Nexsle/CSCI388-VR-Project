@@ -11,48 +11,90 @@ public class PuzzleRoomManager : MonoBehaviour
     public GameObject blueSphere;
     public GameObject greenCylinder;
 
-    public Transform door;
+    public GameObject finishButton;
 
-    private bool doorOpened = false;
-    private Vector3 doorTargetPosition;
-    public float doorSpeed = 2f;
+    public AudioSource audioSource;
+
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
+    public AudioClip puzzleCompleteSound;
+
+    private bool puzzleSolved = false;
+
+    private bool redChecked = false;
+    private bool blueChecked = false;
+    private bool greenChecked = false;
 
     void Update()
     {
-        if (!doorOpened)
+        if (puzzleSolved) return;
+
+        CheckSocket(redSocket, redCube, ref redChecked);
+        CheckSocket(blueSocket, blueSphere, ref blueChecked);
+        CheckSocket(greenSocket, greenCylinder, ref greenChecked);
+
+        bool redCorrect =
+            redSocket.hasSelection &&
+            redSocket.firstInteractableSelected.transform.gameObject == redCube;
+
+        bool blueCorrect =
+            blueSocket.hasSelection &&
+            blueSocket.firstInteractableSelected.transform.gameObject == blueSphere;
+
+        bool greenCorrect =
+            greenSocket.hasSelection &&
+            greenSocket.firstInteractableSelected.transform.gameObject == greenCylinder;
+
+        if (redCorrect && blueCorrect && greenCorrect)
         {
-            bool redCorrect =
-                redSocket.hasSelection &&
-                redSocket.firstInteractableSelected.transform.gameObject == redCube;
-
-            bool blueCorrect =
-                blueSocket.hasSelection &&
-                blueSocket.firstInteractableSelected.transform.gameObject == blueSphere;
-
-            bool greenCorrect =
-                greenSocket.hasSelection &&
-                greenSocket.firstInteractableSelected.transform.gameObject == greenCylinder;
-
-            if (redCorrect && blueCorrect && greenCorrect)
-            {
-                OpenDoor();
-            }
-        }
-
-        if (doorOpened)
-        {
-            door.position = Vector3.Lerp(
-                door.position,
-                doorTargetPosition,
-                Time.deltaTime * doorSpeed
-            );
+            PuzzleSolved();
         }
     }
 
-    void OpenDoor()
+    void CheckSocket(
+        XRSocketInteractor socket,
+        GameObject correctObject,
+        ref bool alreadyChecked
+    )
     {
-        doorOpened = true;
+        if (socket.hasSelection && !alreadyChecked)
+        {
+            alreadyChecked = true;
 
-        doorTargetPosition = door.position + new Vector3(0f, 3f, 0f);
+            if (
+                socket.firstInteractableSelected.transform.gameObject
+                == correctObject
+            )
+            {
+                if (audioSource != null && correctSound != null)
+                {
+                    audioSource.PlayOneShot(correctSound);
+                }
+            }
+            else
+            {
+                if (audioSource != null && wrongSound != null)
+                {
+                    audioSource.PlayOneShot(wrongSound);
+                }
+            }
+        }
+
+        if (!socket.hasSelection)
+        {
+            alreadyChecked = false;
+        }
+    }
+
+    void PuzzleSolved()
+    {
+        puzzleSolved = true;
+
+        finishButton.SetActive(true);
+
+        if (audioSource != null && puzzleCompleteSound != null)
+        {
+            audioSource.PlayOneShot(puzzleCompleteSound);
+        }
     }
 }
