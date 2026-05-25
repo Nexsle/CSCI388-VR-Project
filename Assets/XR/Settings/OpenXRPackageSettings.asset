@@ -660,7 +660,7 @@ MonoBehaviour:
   lateLatchingDebug: 0
   optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegions: 0
+  m_hasMigratedMultiviewRenderRegions: 1
   spacewarpMotionVectorTextureFormat: 0
 --- !u!114 &4009572395752236550
 MonoBehaviour:
@@ -801,25 +801,25 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
-  - {fileID: -7364887491178133868}
-  - {fileID: -5787127342289248156}
-  - {fileID: 8941419260519562750}
-  - {fileID: 2997196501813847144}
-  - {fileID: -622846798253818938}
-  - {fileID: 7282601295576326118}
-  - {fileID: -6312077362093147887}
-  - {fileID: -1586334707334916966}
-  - {fileID: 5008382803046882748}
-  - {fileID: 8705100799589815599}
-  - {fileID: 4879652902533806384}
   - {fileID: -4299333828267333945}
-  - {fileID: -4750782613139312669}
-  - {fileID: -2768201309382414898}
-  - {fileID: -3445161732698822222}
-  - {fileID: -2154100155567231899}
-  - {fileID: 199014153288802117}
-  - {fileID: -6565206380089823208}
   - {fileID: 7310323462791809161}
+  - {fileID: -622846798253818938}
+  - {fileID: 4879652902533806384}
+  - {fileID: 5008382803046882748}
+  - {fileID: 199014153288802117}
+  - {fileID: -4750782613139312669}
+  - {fileID: -3445161732698822222}
+  - {fileID: -2768201309382414898}
+  - {fileID: 2997196501813847144}
+  - {fileID: -6565206380089823208}
+  - {fileID: 8705100799589815599}
+  - {fileID: -1586334707334916966}
+  - {fileID: 8941419260519562750}
+  - {fileID: -5787127342289248156}
+  - {fileID: -6312077362093147887}
+  - {fileID: 7282601295576326118}
+  - {fileID: -7364887491178133868}
+  - {fileID: -2154100155567231899}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &6151948795933949410
