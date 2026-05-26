@@ -5,8 +5,6 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class DoorInteractable : MonoBehaviour
 {
-    [SerializeField] private string nextScene;
-
     private XRSimpleInteractable interactable;
 
     private bool openDoor = false;
@@ -14,6 +12,7 @@ public class DoorInteractable : MonoBehaviour
     private void Awake()
     {
         interactable = GetComponent<XRSimpleInteractable>();
+
         interactable.selectEntered.AddListener(OnInteract);
     }
 
@@ -26,11 +25,19 @@ public class DoorInteractable : MonoBehaviour
         }
 
         Debug.Log("Changing Scene");
-        SceneManager.LoadScene(nextScene);
+
+        SceneManager.LoadScene(
+            RoomOrderManager.Instance.GetNextRoom()
+        );
     }
 
     public void OpenDoor()
     {
         openDoor = true;
+    }
+
+    private void OnDestroy()
+    {
+        interactable.selectEntered.RemoveListener(OnInteract);
     }
 }
