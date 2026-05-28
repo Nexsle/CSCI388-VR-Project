@@ -338,7 +338,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: aec7665d811335147a2261045ef7665d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9b7c6eb5f3cef3f4b8d3470e9fd37b0e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4f816cbd04e37fa47ae16f6a8a40a59d, type: 2}
     - target: {fileID: 919132149155446097, guid: aec7665d811335147a2261045ef7665d, type: 3}
       propertyPath: m_Name
       value: Plant_Pot_Flare (1)
@@ -823,7 +823,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9489287415015c24b9f6cb9dfbc0cfb0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9b7c6eb5f3cef3f4b8d3470e9fd37b0e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4f816cbd04e37fa47ae16f6a8a40a59d, type: 2}
     - target: {fileID: 919132149155446097, guid: 9489287415015c24b9f6cb9dfbc0cfb0, type: 3}
       propertyPath: m_Name
       value: Rug
@@ -884,7 +884,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: aec7665d811335147a2261045ef7665d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9b7c6eb5f3cef3f4b8d3470e9fd37b0e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4f816cbd04e37fa47ae16f6a8a40a59d, type: 2}
     - target: {fileID: 919132149155446097, guid: aec7665d811335147a2261045ef7665d, type: 3}
       propertyPath: m_Name
       value: Plant_Pot_Flare
@@ -1067,7 +1067,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8eb988e5c2855974ebfe21130111a1de, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9b7c6eb5f3cef3f4b8d3470e9fd37b0e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4f816cbd04e37fa47ae16f6a8a40a59d, type: 2}
     - target: {fileID: 919132149155446097, guid: 8eb988e5c2855974ebfe21130111a1de, type: 3}
       propertyPath: m_Name
       value: Couch
